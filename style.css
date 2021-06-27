@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* i don't want scroll bar is shown by default */
+    overflow: hidden;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    
+    /* I'm going to set the width of the container to 90 VW, which is a viewport width.
+    So if you think of the width as 100 slices going this way, we're taking up 90 of the 100. */
+    width: 90vw;
+}
+
+.panel {
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 0.5;
+    margin: 10px;
+
+    /* Because I want to position the H threes and side absolute, so that means that the the H3 container Divx, which is our container element, which is the panel has to be relative. */
+    position: relative;
+
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+    font-size: 24px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    opacity: 0;
+}
+
+.panel.active{
+    /* So we're just saying if the panel div also has an active class, will change the flux from zero point five, which is the initial value to five. And now you can see it's much wider for the H3 */
+    flex: 5;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media(max-width: 480px) {
+    .container {
+        width:100vw;
+    }
+    
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5) {
+        display: none;
+    }
+}
