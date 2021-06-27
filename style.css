@@ -15,6 +15,7 @@ body {
     margin: 0;
 }
 
+
 .container {
     display: flex;
     
@@ -49,6 +50,9 @@ body {
 }
 
 .panel.active{
+    
+    height: 80vh;
+
     /* So we're just saying if the panel div also has an active class, will change the flux from zero point five, which is the initial value to five. And now you can see it's much wider for the H3 */
     flex: 5;
 }
